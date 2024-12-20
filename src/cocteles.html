@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cócteles</title>
+
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="container min-w-[480px] mx-auto font-mono text-transform uppercase">
+
+  <!-- Header -->
+  <header class="bg-purple-950 text-white p-6 flex justify-between items-center flex-wrap">
+    <h1 class="text-3xl font-bold text-center">Find your ideal Cocktail</h1>
+
+    <div class="w-full flex justify-end gap-4 items-center my-4">
+      <button class="p-4 shadow shadow-purple-500 rounded-full text-purple-500 bg-white hover:bg-purple-950"
+        id="btn_populares">Populares</button>
+
+      <form id="form" class="flex flex-nowrap justify-center items-center gap-4">
+        <input type="text" class="p-4 shadow shadow-purple-500 rounded-full text-purple-500 hover:bg-purple-950
+        placeholder:text-purple-500 focus:outline-none" id="input_cocteles" placeholder="Martini...">
+        <button type="submit" class="min-w-0 p-4 shadow shadow-purple-500 rounded-full text-purple-500 bg-white hover:bg-purple-950"
+          id="btn_buscar">Buscar</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6">
+
+    <!-- Seccion para los cocteles -->
+    <section id="lista_cocteles" class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4  text-purple-500">Popular cocktails</h2>
+
+      <!-- Contenedor para cargar los cocteles -->
+      <div id="container_cocteles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-4">
+    <div>
+        <p>&copy; 2023 Cócteles. Todos los derechos reservados.</p>
+    </div>
+    <div class="mt-2">
+        <a href="#" class="text-purple-300 hover:underline">Política de privacidad</a> | 
+        <a href="#" class="text-purple-300 hover:underline">Términos de servicio</a>
+    </div>
+    <div class="mt-4">
+        <a href="#" class="text-purple-300 hover:underline">Facebook</a> | 
+        <a href="#" class="text-purple-300 hover:underline">Twitter</a> | 
+        <a href="#" class="text-purple-300 hover:underline">Instagram</a>
+    </div>
+</footer>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
