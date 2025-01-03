@@ -4,6 +4,8 @@ const btn_buscar=document.getElementById("btn_populares");
 const form=document.getElementById("form");
 const input_cocteles=document.getElementById("input_cocteles");
 
+let coctelesPopulares=[];
+let coctelesByName=[];
 
 // Fetch lista de cócteles populares
 const cargarCoctelesPopulares = async () => {
@@ -17,29 +19,25 @@ const cargarCoctelesPopulares = async () => {
     }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    cargarCoctelesPopulares();
-})
 
-btn_populares.addEventListener("click", cargarCoctelesPopulares);
 
 // Mostrar lista de cócteles
 const mostrarCocteles = (cocteles) => {
     const fragment = document.createDocumentFragment();
-
+    
     cocteles.forEach((coctel) => {
         const newDiv = document.createElement("DIV");
         newDiv.classList = ("bg-purple-100 rounded shadow shadow-purple-500 p-4");
-
+        
         const newImg = document.createElement("IMG");
         newImg.src = coctel.strDrinkThumb;
         newImg.alt = coctel.strDrink;
         newImg.classList = ("w-full h-80 object-cover rounded")
-
+        
         const newTitle = document.createElement("H2");
         newTitle.textContent = coctel.strDrink;
         newTitle.classList = ("text-lg font-semibold mt-2 text-purple-500");
-
+        
         newDiv.append(newImg);
         newDiv.append(newTitle);
         fragment.append(newDiv);
@@ -50,13 +48,20 @@ const mostrarCocteles = (cocteles) => {
 
 const cargarCoctelesByName = async (event) => {
     event.preventDefault();
-    container_cocteles.innerHTML = '';
-    
-    const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input_cocteles.value);
-    const data = await response.json();
-    const cocteles=data.drinks;
-    mostrarCocteles(cocteles);
-    input_cocteles.value='';
+    if(input_cocteles.value!=""){
+        container_cocteles.innerHTML = '';
+        
+        const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input_cocteles.value);
+        const data = await response.json();
+        const cocteles=data.drinks;
+        mostrarCocteles(cocteles);
+        input_cocteles.value='';
+    }
 };
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    cargarCoctelesPopulares();
+})
+btn_populares.addEventListener("click", cargarCoctelesPopulares);
 form.addEventListener("submit", cargarCoctelesByName);
