@@ -619,6 +619,10 @@ video {
   margin-bottom: 2rem;
 }
 
+.ml-\[80\%\] {
+  margin-left: 80%;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -633,26 +637,6 @@ video {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.ml-\[80\%\] {
-  margin-left: 80%;
-}
-
-.ml-\[60\%\] {
-  margin-left: 60%;
-}
-
-.ml-\[90\%\] {
-  margin-left: 90%;
-}
-
-.ml-\[85\%\] {
-  margin-left: 85%;
 }
 
 .block {
@@ -677,6 +661,10 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-\[400px\] {
+  height: 400px;
 }
 
 .min-h-screen {
@@ -919,6 +907,11 @@ video {
 
 .grayscale {
   --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.grayscale-0 {
+  --tw-grayscale: grayscale(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
